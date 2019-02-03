@@ -2,14 +2,12 @@
 
 # set up some variables
 
-
-RESTORE_FROM_INSTANCE_ID=orion-global-alpha   #RDS id to restore snapshot
-TARGET_INSTANCE_ID=gamma                  #new rds instance name
-TARGET_INSTANCE_CLASS=db.t2.micro         #new rds class
-VPC_ID=default                            #new rds vpc id
-NEW_MASTER_PASS=qwerty1234                #new rds password
-SECURITY_GROUP_ID=sg-081e8ce45e2043a79    #new rds security group
-
+RESTORE_FROM_INSTANCE_ID=orion-global-alpha
+TARGET_INSTANCE_ID=gamma-test
+TARGET_INSTANCE_CLASS=db.t2.micro
+VPC_ID=default
+NEW_MASTER_PASS=qwerty1234
+SECURITY_GROUP_ID=sg-081e8ce45e2043a79
 
 
 echo "+------------------------------------------------------------------------------------+"
@@ -77,8 +75,6 @@ echo "SUCCESS: Operation complete. Created instance ${TARGET_INSTANCE_ID} from s
 
 aws rds describe-db-instances --db-instance-identifier $TARGET_INSTANCE_ID
 
-
-echo "username = aaron"
 
 echo "password = qwerty1234"
 
