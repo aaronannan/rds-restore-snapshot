@@ -8,12 +8,10 @@ TARGET_INSTANCE_CLASS=db.t2.micro
 VPC_ID=default
 NEW_MASTER_PASS=qwerty1234
 SECURITY_GROUP_ID=sg-081e8ce45e2043a79
-SNS_TOPIC_ARN=gamma-test
 
 
 echo "+------------------------------------------------------------------------------------+"
 echo "| RDS Snapshot and Restore to Temp Instance                                          |"
-echo "+------------------------------------------------------------------------------------+"
 echo ""
 
 
@@ -74,10 +72,8 @@ echo "Finished updating ${TARGET_INSTANCE_ID}"
 
 echo "SUCCESS: Operation complete. Created instance ${TARGET_INSTANCE_ID} from snapshot ${snapshot_id}"
 
-aws sns publish --topic-arn $SNS_TOPIC_ARN \
-    --subject "RDS Snapshot and Restore" \
-    --message "Successfully created instance ${TARGET_INSTANCE_ID} from snapshot ${snapshot_id}"
 
+aws rds describe-db-instances --db-instance-identifier $TARGET_INSTANCE_ID
 
 
 echo "username = aaron"
