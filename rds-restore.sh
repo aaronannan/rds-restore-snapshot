@@ -11,8 +11,28 @@ SECURITY_GROUP_ID=sg-081e8ce45e2043a79   #new rds security group
 
 
 
-echo "+------------------------------------------------------------------------------------+"
-echo "| RDS Snapshot and Restore to Temp Instance                                          |"
+echo "+-------------------------------------------------------------------------------------------+"
+echo "| Platform Science RDS Automation to create new RDS instance from desired current snapshot  |"
+echo "|                                                                                           |"  
+echo "|                                     /\           /|                                       |"  
+echo "|                                   /    \       /  |                                       |"  
+echo "|                                 /        \    /   |                                       |"
+echo "|                               /            \ /    |                                       |"  
+echo "|                             /                \    |                                       |"  
+echo "|                           /                    \  |                                       |"  
+echo "|                         /________________________\|                                       |"  
+echo "|                         \          |                                                      |"  
+echo "|                           \        |                                                      |"  
+echo "|                             \      |                                                      |"  
+echo "|                               \    |                                                      |"      
+echo "|                                 \  |                                                      |"  
+echo "|                                   \|                                                      |"  
+echo "|                                                                                           |"  
+echo "|                                                                                           |"  
+echo "|                   ............PLATFORM SCIENCE.............                               |"  
+echo "|                                                                                           |"  
+echo "|                                                                                           |"  
+echo "+-------------------------------------------------------------------------------------------+"
 echo ""
 
 
