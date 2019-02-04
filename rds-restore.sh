@@ -82,9 +82,6 @@ echo "Finished updating ${TARGET_INSTANCE_ID}"
 echo "SUCCESS: Operation complete. Created instance ${TARGET_INSTANCE_ID} from snapshot ${snapshot_id}"
 
 
-aws rds describe-db-instances --db-instance-identifier $TARGET_INSTANCE_ID
-
-
 echo "password = qwerty1234"
 
 
