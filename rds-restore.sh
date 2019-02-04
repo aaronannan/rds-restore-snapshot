@@ -2,12 +2,13 @@
 
 # set up some variables
 
-RESTORE_FROM_INSTANCE_ID=orion-global-alpha
-TARGET_INSTANCE_ID=gamma-test
-TARGET_INSTANCE_CLASS=db.t2.micro
-VPC_ID=default
-NEW_MASTER_PASS=qwerty1234
-SECURITY_GROUP_ID=sg-081e8ce45e2043a79
+RESTORE_FROM_INSTANCE_ID=orion-global-alpha #RDS id to restore snapshot
+TARGET_INSTANCE_ID=gamma    #new rds instance name
+TARGET_INSTANCE_CLASS=db.t2.micro     #new rds class
+VPC_ID=default                 #new rds vpc id
+NEW_MASTER_PASS=qwerty1234     #new rds password
+SECURITY_GROUP_ID=sg-081e8ce45e2043a79   #new rds security group
+
 
 
 echo "+------------------------------------------------------------------------------------+"
@@ -26,7 +27,7 @@ snapshot_id=`aws rds describe-db-snapshots \
 
 echo "Snapshot Id: $snapshot_id"
 
-echo "Restoring snapshot ${SNAPSHOT_ID} to a new db instance ${TARGET_INSTANCE_ID}..."
+echo "Restoring snapshot ${snapshot_id} to a new db instance ${TARGET_INSTANCE_ID}..."
 aws rds restore-db-instance-from-db-snapshot \
     --db-instance-identifier $TARGET_INSTANCE_ID \
     --db-snapshot-identifier $snapshot_id \
@@ -34,19 +35,7 @@ aws rds restore-db-instance-from-db-snapshot \
     --db-subnet-group-name $VPC_ID \
     --no-multi-az \
     --publicly-accessible \
-    --auto-minor-version-upgrade
-
-
-while [ "${exit_status}" != "0" ]
-do
-                                                                               9,26          Top
-    --db-subnet-group-name $VPC_ID \
-    --publicly-accessible \
-    --db-subnet-group-name $VPC_ID \
-    --no-multi-az \
-    --publicly-accessible \
-    --auto-minor-version-upgrade
-
+    --no-auto-minor-version-upgrade
 
 while [ "${exit_status}" != "0" ]
 do
