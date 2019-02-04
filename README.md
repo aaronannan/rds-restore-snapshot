@@ -1,5 +1,7 @@
 # rds-restore-snapshot
 
+rds-restore.sh will create a new rds instance and restore a current desired snapshot to the new instance, it will then modify the security group,vpc id and change the password. 
+
 ...AWS CONFIGURATION...
 configure aws credentials
 configure aws config
